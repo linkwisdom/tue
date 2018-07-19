@@ -1,0 +1,50 @@
+{
+  "name": "tue",
+  "description": "Translate vue single file to js",
+  "author": "liuliandong <liu@liandong.org>",
+  "version": "0.0.4",
+  "scripts": {
+    "test": "node bin/tue",
+    "pack": "node bin/tue -d ./"
+  },
+  "babel": {
+    "presets": ["env"]
+  },
+  "bin": {
+    "tue": "./bin/tue"
+  },
+  "keywords": [
+    "component",
+    "vue"
+  ],
+  "main": "./index.js",
+  "buildConf": {
+    "output": "./output",
+    "source": "./test",
+    "main": "index.js",
+    "bundle": "bundle.js",
+    "minify": true
+  },
+  "dependencies": {
+    "args": "^3.0.7",
+    "babel-core": "^6.0.0",
+    "babel-loader": "^6.0.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.11.0",
+    "babelify": "^7.3.0",
+    "css-loader": "^0.23.1",
+    "html-minifier": "^3.2.3",
+    "less": "^2.3.1",
+    "less-loader": "^2.2.3",
+    "shelljs": "^0.7.5",
+    "vue": "^2.2.6",
+    "vue-loader": "^10.0.2",
+    "vue-template-compiler": "^2.2.6",
+    "vueify": "9.4.0",
+    "walk": "^2.3.9"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.4.0"
+  }
+}

@@ -1,0 +1,49 @@
+#! /usr/bin/env node
+
+var tue = require('../index')
+var args = require('args')
+
+args
+  .option('dir', '需要构建的目录')
+  .option('sourcefile', '源文件')
+  .option('targetfile', '目标文件')
+  .option('compact', '打包目标文件')
+  .option('verbose', '是否显示日志', false)
+
+args.examples([
+    {
+        usage: 'bue -d ./',
+        description: '构建一个目录'
+    },
+    {
+        usage: 'bue -s App.vue -t App.js',
+        description: '构建单个文件'
+    },
+    {
+        usage: 'bue -c App.vue -t App.js',
+        description: '构建单个文件'
+    }
+])
+
+const flags = args.parse(process.argv)
+
+if (flags.verbose) {
+    tue.log = console.log
+}
+
+if (flags.sourcefile) {
+    var s = flags.sourcefile
+    var t = flags.targetfile
+    tue.compileFile(s, t)
+}
+else if (flags.compact) {
+    var targetfile = flags.targetfile
+    tue.compact(flags.compact, targetfile)
+}
+else if (flags.dir) {
+    console.log('.....', flags.dir)
+    tue.compileDir(flags.dir)
+}
+else {
+    args.showHelp()
+}
