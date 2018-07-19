@@ -3,6 +3,7 @@
   "description": "Translate vue single file to js",
   "author": "liuliandong <liu@liandong.org>",
   "version": "0.0.4",
+  "homepage": "https://github.com/linkwisdom/tue",
   "scripts": {
     "test": "node bin/tue",
     "pack": "node bin/tue -d ./"

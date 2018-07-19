@@ -41,7 +41,6 @@ else if (flags.compact) {
     tue.compact(flags.compact, targetfile)
 }
 else if (flags.dir) {
-    console.log('.....', flags.dir)
     tue.compileDir(flags.dir)
 }
 else {

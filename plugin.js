@@ -48,7 +48,6 @@ exports.less = function (callback) {
     var fileInfo = this.fileInfo
     fileInfo.target = fileInfo.target || fileInfo.realPath.replace('.less', '.css')
     var paths = [path.dirname(fileInfo.realPath)]
-    console.log(paths)
     less.render(fileInfo.content, {paths: paths}).then(function (output) {
         if (output && output.css) {
             fileInfo.content = output.css
